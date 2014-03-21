@@ -20,4 +20,4 @@ requires:
   Text::SimpleTable: 0
 resources:
   repository: git://github.com/mattp-/Plack-Middleware-DebugLogging.git
-version: 0.001000
+version: 0.001001
