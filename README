@@ -3,7 +3,7 @@ NAME
     plack apps
 
 VERSION
-    version 0.001001
+    version 0.001002
 
 SYNOPSIS
       use Plack::Builder;

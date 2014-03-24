@@ -1,5 +1,5 @@
 package Plack::Middleware::DebugLogging;
-$Plack::Middleware::DebugLogging::VERSION = '0.001001';
+$Plack::Middleware::DebugLogging::VERSION = '0.001002';
 # ABSTRACT: Catalyst style console debugging for plack apps
 
 use strict;
@@ -90,11 +90,15 @@ sub log_request {
         my $keywords = $self->unescape_uri($request->env->{QUERY_STRING});
         $self->log("Query keywords are: $keywords\n")
             if $keywords && $self->keywords;
-        return;
     }
 
-    $self->log_request_parameters(query => $request->query_parameters->mixed, body => $request->body_parameters->mixed)
-        if $self->request_parameters;
+    if ($self->request_parameters) {
+        $self->log_request_parameters(query => $request->query_parameters->mixed)
+            if $self->query_params;
+
+        $self->log_request_parameters(body => $request->body_parameters->mixed)
+            if $request->content && $self->body_params;
+    }
 
     $self->log_request_uploads($request) if $self->uploads;
 }
@@ -243,7 +247,7 @@ Plack::Middleware::DebugLogging - Catalyst style console debugging for plack app
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 
