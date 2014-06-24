@@ -3,7 +3,7 @@ NAME
     plack apps
 
 VERSION
-    version 0.001003
+    version 0.001004
 
 SYNOPSIS
       use Plack::Builder;
@@ -60,6 +60,10 @@ DESCRIPTION
     otherwise. This is ideal for development environments. You probably
     would not want to run this on your production application.
 
+    One new feature that differentiates from Catalyst is that if serialized
+    content is sent via body param, an attempt will be made to deserialize
+    based on the Content-Type header with Data::Serializer.
+
     This middleware will use psgix.logger if available in the environment,
     otherwise it will fall back to printing to stderr.
 
@@ -77,6 +81,8 @@ DESCRIPTION
     uploads
     body_params
     query_params
+    attempt_deserialize
+    serializer
 
 NAME
     Plack::Middleware::DebugLogging - Catalyst style console debugging for

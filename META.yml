@@ -7,17 +7,23 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.013, CPAN::Meta::Converter version 2.133380'
+generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Plack-Middleware-DebugLogging
 requires:
+  Data::Dumper::Concise: 0
+  Data::Serializer::Raw: 0
   HTTP::Message: 0
+  Module::Runtime: 0
   Plack: 0
   Term::Size::Any: 0
   Text::SimpleTable: 0
+  Try::Tiny: 0
 resources:
-  repository: git://github.com/mattp-/Plack-Middleware-DebugLogging.git
-version: 0.001003
+  bugtracker: https://github.com/mattp-/Plack-Middleware-DebugLogging/issues
+  homepage: https://github.com/mattp-/Plack-Middleware-DebugLogging
+  repository: https://github.com/mattp-/Plack-Middleware-DebugLogging.git
+version: 0.001004
